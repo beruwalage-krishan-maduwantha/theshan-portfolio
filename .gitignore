@@ -1,0 +1,14 @@
+node_modules/
+.env
+*.log
+
+# Raw source material (resume PDFs contain NIC number, phone, home address).
+# The actual images used on the site are already copied into assets/images/,
+# so this folder isn't needed to run the app — only keep it out of git.
+# Anchored to the repo root (leading slash) so it does NOT also match
+# assets/images/theshan/, which holds the photos the live site actually uses.
+/theshan/
+
+# Local tool state, not project files
+.claude/
+mongodb.txt

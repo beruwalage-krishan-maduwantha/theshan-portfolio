@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin &ndash; Theshan Adithya</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="admin-main">
+  <div class="container admin-container">
+
+    <!-- ===== LOGIN VIEW ===== -->
+    <section id="loginView" class="admin-card">
+      <h1 class="admin-logo">THESHAN<span>.</span> <small>Admin</small></h1>
+      <form id="loginForm" class="admin-form">
+        <label>Username
+          <input type="text" name="username" autocomplete="username" required>
+        </label>
+        <label>Password
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <p id="loginError" class="admin-error"></p>
+        <button type="submit" class="btn-white admin-btn">Log In</button>
+      </form>
+    </section>
+
+    <!-- ===== DASHBOARD VIEW ===== -->
+    <section id="dashboardView" class="admin-card admin-dashboard" style="display:none;">
+      <div class="admin-dash-head">
+        <h1 class="admin-logo">THESHAN<span>.</span> <small>Admin</small></h1>
+        <button type="button" id="logoutBtn" class="link-arrow">Log out</button>
+      </div>
+
+      <div class="admin-layout">
+        <div class="admin-list-col">
+          <div class="admin-list-head">
+            <h3>Posts</h3>
+            <button type="button" id="newPostBtn" class="btn-white admin-btn-sm">+ New Post</button>
+          </div>
+          <div id="postsList" class="admin-posts-list">
+            <p class="blog-loading">Loading&hellip;</p>
+          </div>
+        </div>
+
+        <div class="admin-editor-col">
+          <form id="postForm" class="admin-form">
+            <input type="hidden" name="id" value="">
+            <label>Title
+              <input type="text" name="title" required>
+            </label>
+            <label>Excerpt <small>(short summary shown on the blog list)</small>
+              <textarea name="excerpt" rows="2" required></textarea>
+            </label>
+            <label>Cover image URL <small>(optional)</small>
+              <input type="text" name="coverImage" placeholder="assets/images/...">
+            </label>
+            <label>Tags <small>(comma-separated, optional)</small>
+              <input type="text" name="tags" placeholder="marketing, seo, tips">
+            </label>
+            <label>Content <small>(HTML allowed — e.g. &lt;p&gt;, &lt;h2&gt;, &lt;strong&gt;, &lt;img&gt;)</small>
+              <textarea name="content" rows="12" required></textarea>
+            </label>
+            <label class="admin-checkbox">
+              <input type="checkbox" name="published" checked>
+              Published (unchecked = draft, hidden from the public blog)
+            </label>
+            <p id="formMessage" class="admin-message"></p>
+            <div class="admin-form-actions">
+              <button type="submit" class="btn-white admin-btn">Save Post</button>
+              <button type="button" id="deletePostBtn" class="admin-btn-danger" style="display:none;">Delete</button>
+              <button type="button" id="clearFormBtn" class="link-arrow">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
