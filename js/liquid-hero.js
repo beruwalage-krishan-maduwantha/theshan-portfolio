@@ -16,22 +16,24 @@ if (!isTouchDevice && !prefersReducedMotion) {
       .then((module) => {
         const LiquidBackground = module.default;
         const app = LiquidBackground(canvas);
-        // The library's shader always "cover"-fits the texture centred. This
-        // photo has almost no space above the head, so on wide windows the
-        // centred crop slices through the hair. Patch the sampled UV to
-        // anchor the top edge instead (like CSS object-position: x top), and
-        // lean right horizontally on narrow screens to keep him in frame.
+        // The library's shader always "cover"-fits the texture centred, which
+        // on wide windows slices through the hair. Patch the sampled UV to
+        // match the CSS fallback's object-position: 72% 25% — biased toward
+        // the top (head keeps its headroom) and right (he stands on the right).
         const plane = app.liquidPlane;
         const baseCompile = plane.material.onBeforeCompile;
         plane.material.onBeforeCompile = (shader, renderer) => {
           baseCompile(shader, renderer);
-          shader.fragmentShader = shader.fragmentShader.replace(
+          // replaceAll: the library's shader has a commented-out copy of
+          // this line *before* the live one, so a single replace() only
+          // ever patched the comment.
+          shader.fragmentShader = shader.fragmentShader.replaceAll(
             'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5)',
-            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5) + vec2((1.0 - uvMapScale.x) * 0.22, (1.0 - uvMapScale.y) * 0.5)'
+            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5) + vec2((1.0 - uvMapScale.x) * 0.22, (1.0 - uvMapScale.y) * 0.25)'
           );
         };
         plane.material.needsUpdate = true;
-        app.loadImage('assets/images/theshan/theshan-3.jpg');
+        app.loadImage('assets/images/theshan/theshan-hero.jpg');
 
         // Toned down from the library's defaults (metalness .75 / roughness
         // .25 / displacementScale 5) — those read as a dramatic, shiny chrome

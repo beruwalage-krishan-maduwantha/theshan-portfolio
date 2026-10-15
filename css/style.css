@@ -391,9 +391,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* subject stands on the right with little headroom: anchor top, and on
-     narrow (portrait) screens keep the face in frame */
-  object-position: 72% 0%;
+  /* subject stands on the right; bias toward the top so the head keeps
+     its headroom (kept in sync with the shader patch in liquid-hero.js) */
+  object-position: 72% 25%;
   filter: brightness(0.72) saturate(1.05);
 }
 .hero-liquid-canvas {

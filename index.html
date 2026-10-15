@@ -73,9 +73,10 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <!-- Top-anchored (CSS object-position / shader patch in liquid-hero.js):
-         the photo has very little space above the head. -->
-    <img src="assets/images/theshan/theshan-3.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
+    <!-- theshan-hero.jpg = theshan-3.jpg with 140px of blurred background
+         added on top (the original has almost no space above the head).
+         Top-anchored via CSS object-position / shader patch in liquid-hero.js. -->
+    <img src="assets/images/theshan/theshan-hero.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
     <canvas id="heroLiquidCanvas" class="hero-liquid-canvas"></canvas>
   </div>
   <div class="container">
