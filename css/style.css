@@ -393,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
   /* subject stands on the right; bias toward the top so the head keeps
      its headroom (kept in sync with the shader patch in liquid-hero.js) */
-  object-position: 72% 25%;
+  object-position: 85% 25%;
   filter: brightness(0.72) saturate(1.05);
 }
 .hero-liquid-canvas {

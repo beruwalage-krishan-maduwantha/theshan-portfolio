@@ -18,7 +18,7 @@ if (!isTouchDevice && !prefersReducedMotion) {
         const app = LiquidBackground(canvas);
         // The library's shader always "cover"-fits the texture centred, which
         // on wide windows slices through the hair. Patch the sampled UV to
-        // match the CSS fallback's object-position: 72% 25% — biased toward
+        // match the CSS fallback's object-position: 85% 25% — biased toward
         // the top (head keeps its headroom) and right (he stands on the right).
         const plane = app.liquidPlane;
         const baseCompile = plane.material.onBeforeCompile;
@@ -29,7 +29,7 @@ if (!isTouchDevice && !prefersReducedMotion) {
           // ever patched the comment.
           shader.fragmentShader = shader.fragmentShader.replaceAll(
             'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5)',
-            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5) + vec2((1.0 - uvMapScale.x) * 0.22, (1.0 - uvMapScale.y) * 0.25)'
+            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5) + vec2((1.0 - uvMapScale.x) * 0.35, (1.0 - uvMapScale.y) * 0.25)'
           );
         };
         plane.material.needsUpdate = true;

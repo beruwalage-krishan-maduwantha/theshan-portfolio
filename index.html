@@ -73,9 +73,11 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <!-- theshan-hero.jpg = theshan-3.jpg with 140px of blurred background
-         added on top (the original has almost no space above the head).
-         Top-anchored via CSS object-position / shader patch in liquid-hero.js. -->
+    <!-- theshan-hero.jpg = theshan-3.jpg (the full photo, uncropped) widened to
+         2:1 — the typical desktop browser viewport — by mirroring the blurred
+         tree on the left, plus 60px of background above the head. So almost
+         nothing has to be cropped off to fill the screen.
+         Positioned via CSS object-position / shader patch in liquid-hero.js. -->
     <img src="assets/images/theshan/theshan-hero.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
     <canvas id="heroLiquidCanvas" class="hero-liquid-canvas"></canvas>
   </div>
