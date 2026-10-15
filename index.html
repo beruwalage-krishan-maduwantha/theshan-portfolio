@@ -73,10 +73,9 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <!-- Landscape photo, trimmed slightly at the bottom so the head keeps
-         clear of the top edge on wide screens. The liquid WebGL canvas loads
-         the same file (see liquid-hero.js). -->
-    <img src="assets/images/theshan/theshan-hero.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
+    <!-- Top-anchored (CSS object-position / shader patch in liquid-hero.js):
+         the photo has very little space above the head. -->
+    <img src="assets/images/theshan/theshan-3.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
     <canvas id="heroLiquidCanvas" class="hero-liquid-canvas"></canvas>
   </div>
   <div class="container">

@@ -16,9 +16,22 @@ if (!isTouchDevice && !prefersReducedMotion) {
       .then((module) => {
         const LiquidBackground = module.default;
         const app = LiquidBackground(canvas);
-        // The library fits the texture centred, so this crop is trimmed at
-        // the bottom to keep the head clear of the top edge on wide screens.
-        app.loadImage('assets/images/theshan/theshan-hero.jpg');
+        // The library's shader always "cover"-fits the texture centred. This
+        // photo has almost no space above the head, so on wide windows the
+        // centred crop slices through the hair. Patch the sampled UV to
+        // anchor the top edge instead (like CSS object-position: x top), and
+        // lean right horizontally on narrow screens to keep him in frame.
+        const plane = app.liquidPlane;
+        const baseCompile = plane.material.onBeforeCompile;
+        plane.material.onBeforeCompile = (shader, renderer) => {
+          baseCompile(shader, renderer);
+          shader.fragmentShader = shader.fragmentShader.replace(
+            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5)',
+            'vec2 newUV = ((vUv - 0.5) * uvMapScale + 0.5) + vec2((1.0 - uvMapScale.x) * 0.22, (1.0 - uvMapScale.y) * 0.5)'
+          );
+        };
+        plane.material.needsUpdate = true;
+        app.loadImage('assets/images/theshan/theshan-3.jpg');
 
         // Toned down from the library's defaults (metalness .75 / roughness
         // .25 / displacementScale 5) — those read as a dramatic, shiny chrome

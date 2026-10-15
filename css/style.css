@@ -375,7 +375,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 .hero-bg {
-  position: absolute; inset: -2% -2% -2% -2%;
+  /* no overscan at the top: the photo's head sits close to its top edge */
+  position: absolute; inset: 0 -2% -2% -2%;
   z-index: 0;
   will-change: transform;
 }
