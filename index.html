@@ -73,30 +73,64 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <img src="assets/images/theshan/theshan-1.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
+    <!-- The source photo is portrait (face in the middle third), so wide
+         screens get a pre-cropped landscape version — otherwise "cover"
+         crops it down to the tree branches or chops the top of the head.
+         The liquid WebGL canvas loads the same wide crop (see liquid-hero.js). -->
+    <picture>
+      <source media="(min-aspect-ratio: 1/1)" srcset="assets/images/theshan/theshan-1-wide.jpg">
+      <img src="assets/images/theshan/theshan-1.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
+    </picture>
     <canvas id="heroLiquidCanvas" class="hero-liquid-canvas"></canvas>
   </div>
   <div class="container">
     <div class="hero-top">
       <div class="hero-title-box">
-        <span class="pre-title fade-in">Digital Marketing Specialist.</span>
-        <h1 class="hero-title split-words">Growing <br> Brands &amp; <br> Driving Results</h1>
+        <span class="pre-title fade-in">CPD UK Certified Digital Marketing Specialist</span>
+        <h1 class="hero-title split-words">Architecting <br> Brand Eminence &amp; <br> Catalyzing Digital Growth</h1>
       </div>
-      <div class="hero-info fade-in">
-        <p>Data-driven strategy <br> that actually converts.</p>
-        <div class="hero-video-box">
-          <img src="assets/images/theshan/theshan-2.jpg" alt="Theshan Adithya">
+      <div class="hero-info">
+        <div class="hero-info-window">
+          <div class="hero-info-scroll">
+            <p class="hero-info-text">Deploying precision-engineered, data-informed strategies that command attention and convert engagement into tangible market dominance.</p>
+            <p class="hero-info-text" aria-hidden="true">Deploying precision-engineered, data-informed strategies that command attention and convert engagement into tangible market dominance.</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="hero-services">
-      <div class="hero-service-item"><span class="num"># 01</span><span>Social Media Marketing</span></div>
-      <div class="hero-service-item"><span class="num"># 02</span><span>Paid Ads &mdash; Meta &amp; Google</span></div>
-      <div class="hero-service-item"><span class="num"># 03</span><span>SEO &amp; Analytics</span></div>
-      <div class="hero-service-item"><span class="num"># 04</span><span>Graphic &amp; Content Design</span></div>
+      <div class="hero-service-item"><span class="num"># 01</span><span>Omnichannel Social Architecture</span></div>
+      <div class="hero-service-item"><span class="num"># 02</span><span>High-Conversion Performance Acquisition (Meta &amp; Google)</span></div>
+      <div class="hero-service-item"><span class="num"># 03</span><span>Algorithmic Optimization &amp; Analytical Intelligence</span></div>
+      <div class="hero-service-item"><span class="num"># 04</span><span>Visual Storytelling &amp; Brand Identity Design</span></div>
     </div>
   </div>
 </section>
+
+<!-- ===== TOOLS STRIP ===== -->
+<div class="tools-strip" aria-label="Platforms and tools I work with">
+  <div class="tools-track">
+    <div class="tool-item"><img src="assets/images/tools/meta.svg" alt="">Meta</div>
+    <div class="tool-item"><img src="assets/images/tools/tiktok.svg" alt="">TikTok</div>
+    <div class="tool-item"><img src="assets/images/tools/googleads.svg" alt="">Google Ads</div>
+    <div class="tool-item"><img src="assets/images/tools/googleanalytics.svg" alt="">Google Analytics</div>
+    <div class="tool-item"><img src="assets/images/tools/googlesearchconsole.svg" alt="">Google Search Console</div>
+    <div class="tool-item"><img src="assets/images/tools/googletagmanager.svg" alt="">Google Tag Manager</div>
+    <div class="tool-item"><img src="assets/images/tools/hubspot.svg" alt="">HubSpot</div>
+    <div class="tool-item"><span class="tool-wordmark-ahrefs"><b>a</b>hrefs</span></div>
+    <div class="tool-item"><img src="assets/images/tools/linkedin.svg" alt="">LinkedIn</div>
+    <!-- duplicate set for a seamless loop -->
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/meta.svg" alt="">Meta</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/tiktok.svg" alt="">TikTok</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/googleads.svg" alt="">Google Ads</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/googleanalytics.svg" alt="">Google Analytics</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/googlesearchconsole.svg" alt="">Google Search Console</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/googletagmanager.svg" alt="">Google Tag Manager</div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/hubspot.svg" alt="">HubSpot</div>
+    <div class="tool-item" aria-hidden="true"><span class="tool-wordmark-ahrefs"><b>a</b>hrefs</span></div>
+    <div class="tool-item" aria-hidden="true"><img src="assets/images/tools/linkedin.svg" alt="">LinkedIn</div>
+  </div>
+</div>
 
 <!-- ===== ABOUT ===== -->
 <section class="about" id="about">
@@ -105,9 +139,9 @@
 
     <div class="about-grid">
       <div class="about-heading">
-        <h2><span>Hi, I'm Theshan Adithya</span> &mdash; a UK-certified digital marketing specialist helping brands grow through smart strategy and creative content.</h2>
+        <h2><span>Hi, I am Theshan Adithya</span> &mdash; an internationally credentialed Digital Marketing Strategist dedicated to elevating enterprises through astute strategic alignment and compelling content infrastructures.</h2>
         <div class="about-sub">
-          <h6><span>My focus is on turning strategy into measurable growth</span> &mdash; from paid ads and SEO to content that actually connects with the right audience, without losing the brand's voice.</h6>
+          <h6><span>My core philosophy centers on transmuting visionary concepts into quantifiable, scalable growth.</span> By harmonizing aesthetic resonance with rigorous analytics, I architect digital ecosystems that not only captivate targeted demographics but also fortify the brand&rsquo;s authentic narrative. From overseeing complex advertising operations on Meta Business Suite to orchestrating seamless local discoverability, my methodology bridges the gap between digital visibility and operational excellence.</h6>
           <a href="#footer" class="link-arrow" data-magnetic>Get in touch <i>&rarr;</i></a>
         </div>
       </div>
@@ -116,24 +150,25 @@
         <div class="stat-item">
           <div class="stat-head"><h4><span data-count="3">0</span>+</h4><em>01</em></div>
           <div class="stat-body">
-            <h5>Years of <br> Experience</h5>
-            <p>Hands-on experience across digital marketing, content, and photography since 2022.</p>
+            <h5>Years of Experience</h5>
+            <span class="stat-kicker">Cultivated Expertise.</span>
+            <p>Honing a multidisciplinary acumen across digital strategy, visual design, and operational logistics since 2022.</p>
           </div>
         </div>
         <div class="stat-item">
           <div class="stat-head"><h4><span data-count="5">0</span>+</h4><em>02</em></div>
           <div class="stat-body">
-            <h5>Brands &amp; <br> Companies</h5>
-            <p>From clothing brands to marine tech and gaming &mdash; I've driven growth across industries.</p>
+            <h5>Brands &amp; Companies</h5>
+            <span class="stat-kicker">Cross-Industry Fluency.</span>
+            <p>Orchestrating exponential growth trajectories for diverse sectors&mdash;ranging from bespoke apparel manufacturing and retail ventures to marine technology and digital ecosystems.</p>
           </div>
         </div>
         <div class="stat-item">
           <div class="stat-head"><h4><span data-count="100">0</span>%</h4><em>03</em></div>
           <div class="stat-body">
-            <h5>Client <br> Focused</h5>
-            <div class="brand-mini">
-              <span>Kukus Gallery</span><span>ComtechLogic</span><span>+4 more</span>
-            </div>
+            <h5>Client Focused</h5>
+            <span class="stat-kicker">Uncompromising Client Centricity.</span>
+            <p>Delivering bespoke, end-to-end solutions for forward-thinking enterprises.</p>
           </div>
         </div>
       </div>
@@ -144,38 +179,78 @@
 <!-- ===== EXPERIENCE ===== -->
 <section class="projects" id="experience">
   <div class="container">
-    <div class="section-tag"><span class="plus">+</span> My Journey</div>
+    <div class="section-tag"><span class="plus">+</span> Professional Odyssey</div>
     <div class="projects-head">
       <h3 class="big-title split-words">Experience</h3>
       <p>A quick look at where I've worked <br> and what I've built along the way.</p>
     </div>
 
-    <div class="exp-grid">
-      <div class="exp-item">
-        <div class="exp-logo"><img src="assets/images/logos/kukus-gallery.png" alt="Kukus Gallery logo"></div>
-        <div class="exp-info">
-          <h4>Kukus Gallery (Pvt) Ltd</h4>
-          <span class="exp-role">Digital Marketing Specialist</span>
-          <span class="exp-period">2024 &ndash; Present &middot; Clothing Manufacturing</span>
+    <div class="odyssey-role">
+      <div class="odyssey-role-head">
+        <div>
+          <h4>Global &amp; Regional Brand Portfolio</h4>
+          <span class="exp-role">Digital Marketing Specialist &amp; Creative Strategist</span>
+        </div>
+        <span class="odyssey-period">2023 &ndash; Present</span>
+      </div>
+      <div class="odyssey-mandate">
+        <span class="odyssey-label">The Mandate</span>
+        <p>Acting as the centralized digital growth engine and creative architect across a diverse syndicate of international and regional enterprises. My operational methodology is uniformly applied across this entire portfolio, encompassing end-to-end social media architecture, high-yield performance advertising (Meta, Google, TikTok, and LinkedIn), and rigorous algorithmic optimization (SEO, Google Analytics, and Business Profile management). Concurrently, I deliver comprehensive creative support, engineering high-fidelity graphic design, video production, and compelling copywriting that maintains strict brand integrity across all digital touchpoints.</p>
+      </div>
+    </div>
+
+    <span class="odyssey-label odyssey-label--section">Portfolio Verticals &amp; Managed Enterprises</span>
+    <div class="vertical-grid">
+      <div class="vertical-item">
+        <span class="vertical-num">01</span>
+        <h5>Apparel, Retail &amp; E-Commerce Ecosystems</h5>
+        <p>Architecting digital storefronts and driving high-intent consumer traffic for premium retail and manufacturing brands.</p>
+        <div class="brand-links">
+          <a href="https://kukusgallery.com/" target="_blank" rel="noopener">Kukus Gallery <i>&#8599;</i></a>
+          <a href="https://ceyoracolombo.com/" target="_blank" rel="noopener">Ceyora Colombo <i>&#8599;</i></a>
+          <a href="https://parkstreetwarehouse.com/" target="_blank" rel="noopener">Park Street Warehouse <i>&#8599;</i></a>
+          <a href="https://leafd.lk/" target="_blank" rel="noopener">Leaf Digital (LeafD) <i>&#8599;</i></a>
         </div>
       </div>
-      <div class="exp-item">
-        <div class="exp-logo"><img src="assets/images/logos/logo-2.png" alt="ComtechLogic logo"></div>
-        <div class="exp-info">
-          <h4>ComtechLogic (Pvt) Ltd</h4>
-          <span class="exp-role">Digital Marketing Specialist</span>
-          <span class="exp-period">2023 &ndash; Present &middot; UK &middot; Marine, Solar, Logistics, Gaming</span>
+      <div class="vertical-item">
+        <span class="vertical-num">02</span>
+        <h5>Maritime, Logistics &amp; Global Infrastructure</h5>
+        <p>Engineering B2B acquisition pipelines and authoritative digital presences for complex logistics and marine engineering sectors.</p>
+        <div class="brand-links">
+          <a href="https://cellcoshipping.com/" target="_blank" rel="noopener">CellCo Shipping (UK) <i>&#8599;</i></a>
+          <a href="https://www.facebook.com/seamarinetechnologies" target="_blank" rel="noopener">Sea Marine Technologies (SL) <i>&#8599;</i></a>
+          <a href="https://www.comtechlogic.com/" target="_blank" rel="noopener">ComtechLogic (UK) <i>&#8599;</i></a>
         </div>
       </div>
-      <div class="exp-item">
-        <div class="exp-logo exp-logo--mono"><span>KV</span></div>
-        <div class="exp-info">
-          <h4>Kv Photography</h4>
-          <span class="exp-role">Photographer Assistant &amp; Digital Marketing</span>
-          <span class="exp-period">2022 &ndash; 2024</span>
+      <div class="vertical-item">
+        <span class="vertical-num">03</span>
+        <h5>Global Trade, Consultancy &amp; Migration Pathways</h5>
+        <p>Designing trust-driven digital narratives and lead-generation architectures for international consultancies.</p>
+        <div class="brand-links">
+          <a href="https://teastarglobal.allianzeglobal.com/" target="_blank" rel="noopener">Tea Star Global <i>&#8599;</i></a>
+          <a href="https://globalpathway.allianzeglobal.com/" target="_blank" rel="noopener">Global Pathway <i>&#8599;</i></a>
+          <a href="https://allianzeglobal.com/" target="_blank" rel="noopener">Allianze Global <i>&#8599;</i></a>
+        </div>
+      </div>
+      <div class="vertical-item">
+        <span class="vertical-num">04</span>
+        <h5>Technology, Sustainability &amp; Entertainment</h5>
+        <p>Fostering hyper-engaged digital communities and executing localized market penetration strategies.</p>
+        <div class="brand-links">
+          <a href="https://www.facebook.com/ecoEnergySource" target="_blank" rel="noopener">Eco Energy Source (UK) <i>&#8599;</i></a>
+          <a href="https://gamehub.lk/" target="_blank" rel="noopener">Game Hub <i>&#8599;</i></a>
         </div>
       </div>
     </div>
+
+    <a class="exp-item exp-item--link" href="https://www.facebook.com/profile.php?id=100064243561087" target="_blank" rel="noopener">
+      <div class="exp-logo exp-logo--mono"><span>KV</span></div>
+      <div class="exp-info">
+        <h4>KV Photography <i class="exp-arrow">&#8599;</i></h4>
+        <span class="exp-role">Photographer &amp; Videographer</span>
+        <span class="exp-period">2022 &ndash; 2024</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -274,18 +349,18 @@
   </div>
   <div class="partner-marquee">
     <div class="partner-track">
-      <div class="partner-item"><img src="assets/images/logos/kukus-gallery.png" alt="Kukus Gallery"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-2.png" alt="ComtechLogic"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-3.png" alt="Sea Marine Technologies"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-photoroom.png" alt="Game Hub"></div>
+      <a class="partner-item" href="https://kukusgallery.com/" target="_blank" rel="noopener"><img src="assets/images/logos/kukus-gallery.png" alt="Kukus Gallery"></a>
+      <a class="partner-item" href="https://www.comtechlogic.com/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-2.png" alt="ComtechLogic"></a>
+      <a class="partner-item" href="https://www.facebook.com/seamarinetechnologies" target="_blank" rel="noopener"><img src="assets/images/logos/logo-3.png" alt="Sea Marine Technologies"></a>
+      <a class="partner-item" href="https://gamehub.lk/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-photoroom.png" alt="Game Hub"></a>
       <div class="partner-item"><img src="assets/images/logos/threestar.png" alt="Threestar Global"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-final.png" alt="CellCo Shipping"></div>
-      <div class="partner-item"><img src="assets/images/logos/kukus-gallery.png" alt="Kukus Gallery"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-2.png" alt="ComtechLogic"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-3.png" alt="Sea Marine Technologies"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-photoroom.png" alt="Game Hub"></div>
+      <a class="partner-item" href="https://cellcoshipping.com/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-final.png" alt="CellCo Shipping"></a>
+      <a class="partner-item" href="https://kukusgallery.com/" target="_blank" rel="noopener"><img src="assets/images/logos/kukus-gallery.png" alt="Kukus Gallery"></a>
+      <a class="partner-item" href="https://www.comtechlogic.com/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-2.png" alt="ComtechLogic"></a>
+      <a class="partner-item" href="https://www.facebook.com/seamarinetechnologies" target="_blank" rel="noopener"><img src="assets/images/logos/logo-3.png" alt="Sea Marine Technologies"></a>
+      <a class="partner-item" href="https://gamehub.lk/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-photoroom.png" alt="Game Hub"></a>
       <div class="partner-item"><img src="assets/images/logos/threestar.png" alt="Threestar Global"></div>
-      <div class="partner-item"><img src="assets/images/logos/logo-final.png" alt="CellCo Shipping"></div>
+      <a class="partner-item" href="https://cellcoshipping.com/" target="_blank" rel="noopener"><img src="assets/images/logos/logo-final.png" alt="CellCo Shipping"></a>
     </div>
   </div>
 </section>

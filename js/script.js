@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   backToTop.addEventListener('click', () => smoothScrollTo(0));
 
   // Scroll reveal for sections
-  const revealTargets = document.querySelectorAll('.stat-item, .project-item, .award-item, .services-head, .acc-item');
+  const revealTargets = document.querySelectorAll('.stat-item, .project-item, .award-item, .services-head, .acc-item, .odyssey-role, .vertical-item');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

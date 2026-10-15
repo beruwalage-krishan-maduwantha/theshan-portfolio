@@ -16,7 +16,10 @@ if (!isTouchDevice && !prefersReducedMotion) {
       .then((module) => {
         const LiquidBackground = module.default;
         const app = LiquidBackground(canvas);
-        app.loadImage('/assets/images/theshan/theshan-1.jpg');
+        // Landscape pre-crop of the portrait photo: the library fits the
+        // texture centred, which on a wide screen would otherwise slice
+        // through the forehead.
+        app.loadImage('assets/images/theshan/theshan-1-wide.jpg');
 
         // Toned down from the library's defaults (metalness .75 / roughness
         // .25 / displacementScale 5) — those read as a dramatic, shiny chrome
