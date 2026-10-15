@@ -73,14 +73,10 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-bg" id="heroBg">
-    <!-- The source photo is portrait (face in the middle third), so wide
-         screens get a pre-cropped landscape version — otherwise "cover"
-         crops it down to the tree branches or chops the top of the head.
-         The liquid WebGL canvas loads the same wide crop (see liquid-hero.js). -->
-    <picture>
-      <source media="(min-aspect-ratio: 1/1)" srcset="assets/images/theshan/theshan-1-wide.jpg">
-      <img src="assets/images/theshan/theshan-1.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
-    </picture>
+    <!-- Landscape photo, trimmed slightly at the bottom so the head keeps
+         clear of the top edge on wide screens. The liquid WebGL canvas loads
+         the same file (see liquid-hero.js). -->
+    <img src="assets/images/theshan/theshan-hero.jpg" alt="" class="hero-bg-fallback" id="heroFallbackImg" />
     <canvas id="heroLiquidCanvas" class="hero-liquid-canvas"></canvas>
   </div>
   <div class="container">
